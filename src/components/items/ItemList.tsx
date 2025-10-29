@@ -10,7 +10,10 @@ interface Props {
 const ItemList: React.FC<Props> = ({ items, onEdit, onDelete }) => {
   if (!items.length)
     return (
-      <Text className="text-gray-500 text-center py-6">
+      <Text
+        variant="body-small"
+        className="text-gray-500 text-center p-3"
+      >
         {"No items found. Click “Create” to add one."}
       </Text>
     )

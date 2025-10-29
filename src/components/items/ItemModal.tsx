@@ -36,8 +36,8 @@ const ItemModal: React.FC<Props> = ({ editingItem, onSubmit, onCancel }) => {
   }, [editingItem, reset])
 
   return (
-    <Dialog TriggerElement={null} modalKey={CREATE_MODAL_KEY}>
-      <Box className="bg-white p-6 rounded-lg w-96 flex flex-col gap-4">
+    <Dialog TriggerElement={null} modalKey={CREATE_MODAL_KEY} >
+      <Box className="bg-white p-3 rounded-lg w-full flex flex-col gap-4">
         <Text variant="h6" className="text-lg font-bold text-center">
           {editingItem ? "Edit Item" : "Create Item"}
         </Text>
@@ -50,36 +50,45 @@ const ItemModal: React.FC<Props> = ({ editingItem, onSubmit, onCancel }) => {
           className="flex flex-col gap-3"
         >
           <Box>
-            <Text className="block text-sm font-medium mb-1">
+            <Text variant="body-medium">
               {"Title"}
             </Text>
-            <TextField {...register("title")} />
+            <TextField size="small" {...register("title")} />
             {
               errors.title &&
-              <Text className="text-red-500 text-sm mt-1">
+              <Text variant="label-xsmall" className="text-red-500">
                 {errors.title.message}
               </Text>
             }
           </Box>
 
           <Box>
-            <Text className="block text-sm font-medium mb-1">
+            <Text variant="body-medium">
               {"Subtitle"}
             </Text>
-            <TextField {...register("subtitle")} />
+            <TextField  size="small"{...register("subtitle")} />
             {
               errors.subtitle &&
-              <Text className="text-red-500 text-sm mt-1">
+              <Text variant="label-xsmall" className="text-red-500">
                 {errors.subtitle.message}
               </Text>
             }
           </Box>
 
           <Box className="flex justify-end gap-2 mt-4">
-            <Button type="button" variant="ghost" onClick={onCancel}>
+            <Button
+              type="button"
+              size="large"
+              variant="ghost"
+              onClick={onCancel}
+            >
               {"Cancel"}
             </Button>
-            <Button type="submit" variant="primary">
+            <Button
+              type="submit"
+              size="large"
+              variant="primary"
+            >
               {editingItem ? "Update" : "Create"}
             </Button>
           </Box>
