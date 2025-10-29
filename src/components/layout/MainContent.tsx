@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from "react"
+import { useState, useMemo } from "react"
 import { Search } from "@/assets/icons"
 import ItemList from "../items/ItemList"
 import { Box, Button, Text, TextField } from "../ui/primitives"

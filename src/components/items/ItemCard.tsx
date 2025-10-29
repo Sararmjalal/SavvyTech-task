@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Edit, Trash } from "@/assets/icons"
 import { Box, Button, ListItem, Text } from "../ui/primitives"
 import ConfirmModal from "./ConfirmModal"
